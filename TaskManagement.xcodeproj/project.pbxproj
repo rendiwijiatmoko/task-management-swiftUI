@@ -11,6 +11,10 @@
 		F70D00CA2811B17300E509FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D00C92811B17300E509FD /* ContentView.swift */; };
 		F70D00CC2811B17500E509FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70D00CB2811B17500E509FD /* Assets.xcassets */; };
 		F70D00CF2811B17500E509FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70D00CE2811B17500E509FD /* Preview Assets.xcassets */; };
+		F70D00D92811B32600E509FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D00D82811B32600E509FD /* HomeView.swift */; };
+		F70D00DC2811B63D00E509FD /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D00DB2811B63D00E509FD /* Extentions.swift */; };
+		F70D00DE2811B79B00E509FD /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D00DD2811B79B00E509FD /* TaskModel.swift */; };
+		F70D00E02811B80200E509FD /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70D00DF2811B80200E509FD /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		F70D00C92811B17300E509FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F70D00CB2811B17500E509FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70D00CE2811B17500E509FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F70D00D82811B32600E509FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F70D00DB2811B63D00E509FD /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		F70D00DD2811B79B00E509FD /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		F70D00DF2811B80200E509FD /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,10 @@
 		F70D00C62811B17300E509FD /* TaskManagement */ = {
 			isa = PBXGroup;
 			children = (
+				F70D00DA2811B62500E509FD /* Helpers */,
+				F70D00D72811B29D00E509FD /* Models */,
+				F70D00D62811B29700E509FD /* ViewModels */,
+				F70D00D52811B21700E509FD /* Views */,
 				F70D00C72811B17300E509FD /* TaskManagementApp.swift */,
 				F70D00C92811B17300E509FD /* ContentView.swift */,
 				F70D00CB2811B17500E509FD /* Assets.xcassets */,
@@ -65,6 +77,38 @@
 				F70D00CE2811B17500E509FD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F70D00D52811B21700E509FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F70D00D82811B32600E509FD /* HomeView.swift */,
+				F70D00DF2811B80200E509FD /* TaskViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F70D00D62811B29700E509FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F70D00D72811B29D00E509FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F70D00DD2811B79B00E509FD /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F70D00DA2811B62500E509FD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F70D00DB2811B63D00E509FD /* Extentions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70D00DC2811B63D00E509FD /* Extentions.swift in Sources */,
+				F70D00E02811B80200E509FD /* TaskViewModel.swift in Sources */,
+				F70D00D92811B32600E509FD /* HomeView.swift in Sources */,
+				F70D00DE2811B79B00E509FD /* TaskModel.swift in Sources */,
 				F70D00CA2811B17300E509FD /* ContentView.swift in Sources */,
 				F70D00C82811B17300E509FD /* TaskManagementApp.swift in Sources */,
 			);

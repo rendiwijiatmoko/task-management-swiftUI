@@ -11,9 +11,9 @@ class TaskViewModel: ObservableObject {
     // some task
     @Published var storeTasks: [TaskModel] = [
         TaskModel(title: "Meeting", description: "Disscus team task for today", date: .init(timeIntervalSince1970: 1650474722)),
-        TaskModel(title: "Meeting", description: "Disscus team task for today", date: Date()),
-        TaskModel(title: "Meeting", description: "Disscus team task for today", date: Date()),
-        TaskModel(title: "Meeting", description: "Disscus team task for today", date: Date())
+        TaskModel(title: "Meeting Manager", description: "Updating Task", date: .init(timeIntervalSince1970: 1650561122)),
+        TaskModel(title: "Sprint", description: "Updating Weekly sprint", date: .init(timeIntervalSince1970: 1650561122)),
+        TaskModel(title: "Reminder", description: "Update timesheet", date: Date()),
     ]
     
     // MARK: Current Week days
@@ -39,6 +39,9 @@ class TaskViewModel: ObservableObject {
             let filtered = self.storeTasks.filter {
                 return calendar.isDate($0.date, inSameDayAs: self.currentDay)
             }
+                .sorted { task1, task2 in
+                    return task2.date <  task1.date
+                }
             
             DispatchQueue.main.async {
                 withAnimation {
@@ -80,5 +83,14 @@ class TaskViewModel: ObservableObject {
         let calendar = Calendar.current
         
         return calendar.isDate(currentDay, inSameDayAs: date)
+    }
+    
+    // MARK: Checking if the current hour is task hour
+    func isCurrentHour(date: Date)-> Bool {
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let currentHour = calendar.component(.hour, from: Date())
+        
+        return hour == currentHour
     }
 }

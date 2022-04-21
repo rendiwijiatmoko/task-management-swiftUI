@@ -96,7 +96,7 @@ struct HomeView: View {
     
     // MARK: Task View
     func TasksView()-> some View {
-        LazyVStack(spacing: 18) {
+        LazyVStack(spacing: 20) {
             if let tasks = taskModel.filteredTask {
                 if tasks.isEmpty {
                     Text("No tasks found!")
@@ -127,13 +127,14 @@ struct HomeView: View {
         HStack(alignment: .top, spacing: 30) {
             VStack(spacing: 10) {
                 Circle()
-                    .fill(.primary)
+                    .fill(taskModel.isCurrentHour(date: task.date) ? .primary : Color(.clear))
                     .frame(width: 15, height: 15)
                     .background(
                         Circle()
                             .stroke(.primary, lineWidth: 1)
                             .padding(-3)
                     )
+                    .scaleEffect(!taskModel.isCurrentHour(date: task.date) ? 0.7 : 1)
                 Rectangle()
                     .fill(.primary)
                     .frame(width:3)
@@ -153,11 +154,33 @@ struct HomeView: View {
                     
                     Text(task.date.formatted(date: .omitted, time: .shortened))
                 }
+                
+                if taskModel.isCurrentHour(date: task.date) {
+                    // MARK: Team member
+                    HStack(spacing:0) {
+                        HStack(spacing: -10) {
+                            ForEach(["Profile", "Profile"], id:\.self) { user in
+                                Image(user)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 45, height: 45)
+                                    .clipShape(Circle())
+                                    .background(
+                                        Circle()
+                                            .stroke(.primary, lineWidth: 5)
+                                    )
+                            }
+                        }
+                        .hLeading()
+                    }
+                    .padding(.top)
+                }
             }
-            .padding()
+            .padding(taskModel.isCurrentHour(date: task.date) ? 15 : 0)
+            .padding(.bottom, taskModel.isCurrentHour(date: task.date) ? 0 : 10)
             .hLeading()
             .background(
-                Color(.secondarySystemBackground)
+                Color(taskModel.isCurrentHour(date: task.date) ? .secondarySystemBackground : .systemBackground)
                     .cornerRadius(25)
             )
         }
